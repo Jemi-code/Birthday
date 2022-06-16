@@ -1,0 +1,101 @@
+@import '_custom';
+
+body{
+    background-image: url('../images/background.jpg');
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    font-family: 'Oswald', sans-serif;
+    color: $white;
+}
+
+.wait{
+    opacity: 1 !important;
+}
+
+.cover{
+    height: 100vh;
+    width: 100%;
+    background-color: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    filter: opacity(0.9);
+    -webkit-filter: opacity(0.9);
+    z-index: -100;
+}
+
+.wrapper{
+    z-index: 100;
+    opacity: 0;
+    .left{
+        h1{
+        font-family: 'Dancing Script', cursive;
+        font-weight: 700;
+        font-size: 6rem;
+        animation: slide 3s normal;
+        animation-fill-mode: backwards;
+        -webkit-animation: slide 3s normal;
+}
+
+    @keyframes slide{
+        0%{
+            filter: opacity(0);
+            transform: translateY(-1000px);
+            -webkit-transform: translateY(-1000px);
+            -moz-transform: translateY(-1000px);
+            -ms-transform: translateY(-1000px);
+            -o-transform: translateY(-1000px);
+            -webkit-filter: opacity(0);
+}
+        100%{
+            filter: opacity(1);
+            -webkit-filter: opacity(1);
+        }
+    }
+
+        small{
+            margin-bottom: 4rem;
+        }
+
+        p{
+            font-size: 8rem;
+            font-weight: 400;
+            animation: slide2 3s normal;
+            animation-fill-mode: backwards;
+            -webkit-animation: slide2 3s normal;
+        }
+
+        @keyframes slide2 {
+            0%{
+                transform: scale(0);
+                -webkit-transform: scale(0);
+                -moz-transform: scale(0);
+                -ms-transform: scale(0);
+                -o-transform: scale(0);
+}
+        }
+    }
+
+    .right{
+        h2{
+            font-weight: 400 !important;
+            color: rgba(114, 111, 105, 0.411);
+        }
+
+        p{
+            border: 3px dashed rgb(167, 86, 86);
+            border-left: none;
+            border-right: none;
+            padding: 2rem;
+        }
+    }
+
+}
+
+@include media-breakpoint-down(md) {
+    body, .cover{
+        height: 220vh;
+    }
+}
